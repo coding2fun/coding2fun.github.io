@@ -1,2 +1,2 @@
 # coding2fun.github.io
-My personal blog page
+My personal blog pages
