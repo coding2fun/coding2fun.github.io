@@ -3,13 +3,14 @@
         <title>All Posts - Coding is Fun</title>
         <link>https://coding2fun.github.io/posts/</link>
         <description>All Posts | Coding is Fun</description>
-        <generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Mon, 30 Aug 2021 14:40:21 &#43;0530</lastBuildDate><atom:link href="https://coding2fun.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>en-us</language><managingEditor>kishorenayark@gmail.com (Kishore Karunakaran)</managingEditor>
+            <webMaster>kishorenayark@gmail.com (Kishore Karunakaran)</webMaster><lastBuildDate>Mon, 30 Aug 2021 14:40:21 &#43;0530</lastBuildDate><atom:link href="https://coding2fun.github.io/posts/" rel="self" type="application/rss+xml" /><item>
     <title>Sample</title>
-    <link>https://coding2fun.github.io/posts/sample/</link>
+    <link>https://coding2fun.github.io/sample/</link>
     <pubDate>Mon, 30 Aug 2021 14:40:21 &#43;0530</pubDate>
     <author>Author</author>
-    <guid>https://coding2fun.github.io/posts/sample/</guid>
+    <guid>https://coding2fun.github.io/sample/</guid>
     <description><![CDATA[This is sample code
-public static void main(String[] args){ System.out.println(&#34;Hello&#34;); } ]]></description>
+1 2 3  public static void main(String[] args){ System.out.println(&#34;Hello&#34;); }   ]]></description>
 </item></channel>
 </rss>
