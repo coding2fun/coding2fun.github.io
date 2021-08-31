@@ -206,15 +206,15 @@
 
     <span class="kd">private</span> <span class="n">String</span> <span class="n">content</span><span class="o">;</span>
 
-    <span class="nd">@Column</span><span class="o">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">&#34;posted\_at&#34;</span><span class="o">)</span>
+    <span class="nd">@Column</span><span class="o">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">&#34;posted_at&#34;</span><span class="o">)</span>
     <span class="kd">private</span> <span class="n">Date</span> <span class="n">postedAt</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Date</span><span class="o">();</span>
 
-    <span class="nd">@Column</span><span class="o">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">&#34;last\_updated\_at&#34;</span><span class="o">)</span>
+    <span class="nd">@Column</span><span class="o">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">&#34;last_updated_at&#34;</span><span class="o">)</span>
     <span class="kd">private</span> <span class="n">Date</span> <span class="n">lastUpdatedAt</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Date</span><span class="o">();</span>
 
     <span class="nd">@ManyToMany</span><span class="o">(</span><span class="n">cascade</span> <span class="o">=</span> <span class="n">CascadeType</span><span class="o">.</span><span class="na">ALL</span><span class="o">,</span> <span class="n">fetch</span> <span class="o">=</span> <span class="n">FetchType</span><span class="o">.</span><span class="na">EAGER</span><span class="o">)</span>
-    <span class="nd">@JoinTable</span><span class="o">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">&#34;post\_tags&#34;</span><span class="o">,</span> <span class="n">joinColumns</span> <span class="o">=</span> <span class="o">{</span><span class="nd">@JoinColumn</span><span class="o">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">&#34;post\_id&#34;</span><span class="o">)},</span>
-            <span class="n">inverseJoinColumns</span> <span class="o">=</span> <span class="o">{</span><span class="nd">@JoinColumn</span><span class="o">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">&#34;tag\_id&#34;</span><span class="o">)})</span>
+    <span class="nd">@JoinTable</span><span class="o">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">&#34;post_tags&#34;</span><span class="o">,</span> <span class="n">joinColumns</span> <span class="o">=</span> <span class="o">{</span><span class="nd">@JoinColumn</span><span class="o">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">&#34;post_id&#34;</span><span class="o">)},</span>
+            <span class="n">inverseJoinColumns</span> <span class="o">=</span> <span class="o">{</span><span class="nd">@JoinColumn</span><span class="o">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">&#34;tag_id&#34;</span><span class="o">)})</span>
     <span class="kd">private</span> <span class="n">Set</span><span class="o">&lt;</span><span class="n">Tag</span><span class="o">&gt;</span> <span class="n">tags</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashSet</span><span class="o">&lt;&gt;();</span>
 
     <span class="kd">public</span> <span class="nf">Post</span><span class="o">()</span> <span class="o">{</span>
@@ -293,8 +293,8 @@
 <pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="nd">@Repository</span>
 <span class="kd">public</span> <span class="kd">interface</span> <span class="nc">PostRepository</span> <span class="kd">extends</span> <span class="n">JpaRepository</span><span class="o">&lt;</span><span class="n">Post</span><span class="o">,</span> <span class="n">Long</span><span class="o">&gt;</span> <span class="o">{</span>
 
-    <span class="nd">@Query</span><span class="o">(</span><span class="n">nativeQuery</span> <span class="o">=</span> <span class="kc">true</span><span class="o">,</span> <span class="n">value</span> <span class="o">=</span> <span class="s">&#34;select \* from post where id in(select distinct(post\_tags.post\_id) &#34;</span> <span class="o">+</span>
-            <span class="s">&#34;from post\_tags where post\_tags.tag\_id in(:id))&#34;</span><span class="o">)</span>
+    <span class="nd">@Query</span><span class="o">(</span><span class="n">nativeQuery</span> <span class="o">=</span> <span class="kc">true</span><span class="o">,</span> <span class="n">value</span> <span class="o">=</span> <span class="s">&#34;select * from post where id in(select distinct(post_tags.post_id) &#34;</span> <span class="o">+</span>
+            <span class="s">&#34;from post_tags where post_tags.tag_id in(:id))&#34;</span><span class="o">)</span>
     <span class="n">List</span><span class="o">&lt;</span><span class="n">Post</span><span class="o">&gt;</span> <span class="nf">filterByTag</span><span class="o">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">Long</span><span class="o">&gt;</span> <span class="n">id</span><span class="o">);</span>
 <span class="o">}</span>
 </code></pre></td></tr></table>
