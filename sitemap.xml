@@ -2,6 +2,7 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
+            <loc>https://coding2fun.github.io/probability-ds/</loc><lastmod>2019-06-05T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://coding2fun.github.io/tags/aws/</loc><lastmod>2020-11-24T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://coding2fun.github.io/tags/aws-lambda/</loc><lastmod>2020-11-24T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://coding2fun.github.io/categories/</loc><lastmod>2020-11-24T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
@@ -15,5 +16,4 @@
             <loc>https://coding2fun.github.io/tags/bloom-filters/</loc><lastmod>2019-06-05T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://coding2fun.github.io/tags/go/</loc><lastmod>2019-06-05T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://coding2fun.github.io/tags/golang/</loc><lastmod>2019-06-05T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>https://coding2fun.github.io/probability-ds/</loc><lastmod>2019-06-05T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://coding2fun.github.io/tags/probabilistic-data-structures/</loc><lastmod>2019-06-05T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url></urlset>
