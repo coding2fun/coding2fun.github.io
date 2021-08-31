@@ -1,0 +1,17 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>golang - Tag - Coding is Fun</title>
+        <link>https://coding2fun.github.io/tags/golang/</link>
+        <description>golang - Tag - Coding is Fun</description>
+        <generator>Hugo -- gohugo.io</generator><language>en-us</language><managingEditor>kishorenayark@gmail.com (Kishore Karunakaran)</managingEditor>
+            <webMaster>kishorenayark@gmail.com (Kishore Karunakaran)</webMaster><lastBuildDate>Wed, 05 Jun 2019 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://coding2fun.github.io/tags/golang/" rel="self" type="application/rss+xml" /><item>
+    <title>Probabilistic Data Structures</title>
+    <link>https://coding2fun.github.io/probability-ds/</link>
+    <pubDate>Wed, 05 Jun 2019 00:00:00 &#43;0000</pubDate>
+    <author>Author</author>
+    <guid>https://coding2fun.github.io/probability-ds/</guid>
+    <description><![CDATA[Suppose let’s say you are signing up for the new Email id. When you enter a new mail id, respective mail service will check whether the given mail id already exists.
+So how can we build such a kind of systems ? Think for a minute before continue reading
+ Keep all email id’s in memory i.e. Cache, It’s not practical to keep all email id’s in memory. Store it in database/disk and check whether the given email id exist by reading or querying from db/disk.]]></description>
+</item></channel>
+</rss>

@@ -4,5 +4,54 @@
         <link>https://coding2fun.github.io/tags/</link>
         <description>Tags - Tag - Coding is Fun</description>
         <generator>Hugo -- gohugo.io</generator><language>en-us</language><managingEditor>kishorenayark@gmail.com (Kishore Karunakaran)</managingEditor>
-            <webMaster>kishorenayark@gmail.com (Kishore Karunakaran)</webMaster><atom:link href="https://coding2fun.github.io/tags/" rel="self" type="application/rss+xml" /></channel>
+            <webMaster>kishorenayark@gmail.com (Kishore Karunakaran)</webMaster><lastBuildDate>Tue, 24 Nov 2020 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://coding2fun.github.io/tags/" rel="self" type="application/rss+xml" /><item>
+    <title>aws</title>
+    <link>https://coding2fun.github.io/tags/aws/</link>
+    <pubDate>Tue, 24 Nov 2020 00:00:00 &#43;0000</pubDate>
+    <author>Author</author>
+    <guid>https://coding2fun.github.io/tags/aws/</guid>
+    <description><![CDATA[]]></description>
+</item><item>
+    <title>aws-lambda</title>
+    <link>https://coding2fun.github.io/tags/aws-lambda/</link>
+    <pubDate>Tue, 24 Nov 2020 00:00:00 &#43;0000</pubDate>
+    <author>Author</author>
+    <guid>https://coding2fun.github.io/tags/aws-lambda/</guid>
+    <description><![CDATA[]]></description>
+</item><item>
+    <title>micronaut</title>
+    <link>https://coding2fun.github.io/tags/micronaut/</link>
+    <pubDate>Tue, 24 Nov 2020 00:00:00 &#43;0000</pubDate>
+    <author>Author</author>
+    <guid>https://coding2fun.github.io/tags/micronaut/</guid>
+    <description><![CDATA[]]></description>
+</item><item>
+    <title>bloom-filters</title>
+    <link>https://coding2fun.github.io/tags/bloom-filters/</link>
+    <pubDate>Wed, 05 Jun 2019 00:00:00 &#43;0000</pubDate>
+    <author>Author</author>
+    <guid>https://coding2fun.github.io/tags/bloom-filters/</guid>
+    <description><![CDATA[]]></description>
+</item><item>
+    <title>go</title>
+    <link>https://coding2fun.github.io/tags/go/</link>
+    <pubDate>Wed, 05 Jun 2019 00:00:00 &#43;0000</pubDate>
+    <author>Author</author>
+    <guid>https://coding2fun.github.io/tags/go/</guid>
+    <description><![CDATA[]]></description>
+</item><item>
+    <title>golang</title>
+    <link>https://coding2fun.github.io/tags/golang/</link>
+    <pubDate>Wed, 05 Jun 2019 00:00:00 &#43;0000</pubDate>
+    <author>Author</author>
+    <guid>https://coding2fun.github.io/tags/golang/</guid>
+    <description><![CDATA[]]></description>
+</item><item>
+    <title>probabilistic-data-structures</title>
+    <link>https://coding2fun.github.io/tags/probabilistic-data-structures/</link>
+    <pubDate>Wed, 05 Jun 2019 00:00:00 &#43;0000</pubDate>
+    <author>Author</author>
+    <guid>https://coding2fun.github.io/tags/probabilistic-data-structures/</guid>
+    <description><![CDATA[]]></description>
+</item></channel>
 </rss>
