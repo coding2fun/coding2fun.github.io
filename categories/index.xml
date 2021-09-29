@@ -4,7 +4,21 @@
         <link>https://coding2fun.github.io/categories/</link>
         <description>Categories - Category - Coding is Fun</description>
         <generator>Hugo -- gohugo.io</generator><language>en-us</language><managingEditor>kishorenayark@gmail.com (Kishore Karunakaran)</managingEditor>
-            <webMaster>kishorenayark@gmail.com (Kishore Karunakaran)</webMaster><lastBuildDate>Tue, 24 Nov 2020 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://coding2fun.github.io/categories/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>kishorenayark@gmail.com (Kishore Karunakaran)</webMaster><lastBuildDate>Tue, 31 Aug 2021 20:33:53 &#43;0530</lastBuildDate><atom:link href="https://coding2fun.github.io/categories/" rel="self" type="application/rss+xml" /><item>
+    <title>kotlin</title>
+    <link>https://coding2fun.github.io/categories/kotlin/</link>
+    <pubDate>Tue, 31 Aug 2021 20:33:53 &#43;0530</pubDate>
+    <author>Author</author>
+    <guid>https://coding2fun.github.io/categories/kotlin/</guid>
+    <description><![CDATA[]]></description>
+</item><item>
+    <title>aws</title>
+    <link>https://coding2fun.github.io/categories/aws/</link>
+    <pubDate>Tue, 24 Nov 2020 00:00:00 &#43;0000</pubDate>
+    <author>Author</author>
+    <guid>https://coding2fun.github.io/categories/aws/</guid>
+    <description><![CDATA[]]></description>
+</item><item>
     <title>java</title>
     <link>https://coding2fun.github.io/categories/java/</link>
     <pubDate>Tue, 24 Nov 2020 00:00:00 &#43;0000</pubDate>
@@ -12,11 +26,18 @@
     <guid>https://coding2fun.github.io/categories/java/</guid>
     <description><![CDATA[]]></description>
 </item><item>
-    <title>bloom-filter</title>
-    <link>https://coding2fun.github.io/categories/bloom-filter/</link>
+    <title>bloom-filters</title>
+    <link>https://coding2fun.github.io/categories/bloom-filters/</link>
     <pubDate>Wed, 05 Jun 2019 00:00:00 &#43;0000</pubDate>
     <author>Author</author>
-    <guid>https://coding2fun.github.io/categories/bloom-filter/</guid>
+    <guid>https://coding2fun.github.io/categories/bloom-filters/</guid>
+    <description><![CDATA[]]></description>
+</item><item>
+    <title>go</title>
+    <link>https://coding2fun.github.io/categories/go/</link>
+    <pubDate>Wed, 05 Jun 2019 00:00:00 &#43;0000</pubDate>
+    <author>Author</author>
+    <guid>https://coding2fun.github.io/categories/go/</guid>
     <description><![CDATA[]]></description>
 </item></channel>
 </rss>

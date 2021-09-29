@@ -1,0 +1,17 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>non-blocking - Tag - Coding is Fun</title>
+        <link>https://coding2fun.github.io/tags/non-blocking/</link>
+        <description>non-blocking - Tag - Coding is Fun</description>
+        <generator>Hugo -- gohugo.io</generator><language>en-us</language><managingEditor>kishorenayark@gmail.com (Kishore Karunakaran)</managingEditor>
+            <webMaster>kishorenayark@gmail.com (Kishore Karunakaran)</webMaster><lastBuildDate>Tue, 31 Aug 2021 20:33:53 &#43;0530</lastBuildDate><atom:link href="https://coding2fun.github.io/tags/non-blocking/" rel="self" type="application/rss+xml" /><item>
+    <title>Writing non blocking async processing using Kotlin Coroutines in JVM</title>
+    <link>https://coding2fun.github.io/kotlin_coroutines-1/</link>
+    <pubDate>Tue, 31 Aug 2021 20:33:53 &#43;0530</pubDate>
+    <author>Author</author>
+    <guid>https://coding2fun.github.io/kotlin_coroutines-1/</guid>
+    <description><![CDATA[The systems we build nowadays don&rsquo;t really do a lot of computation, instead they communicate between services such as Database, REST API&rsquo;s, etc. If you look deeper we are building a system that wait&rsquo;s most of the time. We send a request to the server and we wait for the response. Microservices, Rest API that&rsquo;s part of our daily life. So, What&rsquo;s the problem with waiting ?
+
+Whenever you perform an IO bounded operation in your service whether it&rsquo;s an database or API call to other services the thread which is assigned to perform this operation will also get blocked.]]></description>
+</item></channel>
+</rss>
