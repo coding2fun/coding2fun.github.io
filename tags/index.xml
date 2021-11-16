@@ -54,6 +54,13 @@
     <guid>https://coding2fun.github.io/tags/micronaut/</guid>
     <description><![CDATA[]]></description>
 </item><item>
+    <title>serverless</title>
+    <link>https://coding2fun.github.io/tags/serverless/</link>
+    <pubDate>Tue, 24 Nov 2020 00:00:00 &#43;0000</pubDate>
+    <author>Author</author>
+    <guid>https://coding2fun.github.io/tags/serverless/</guid>
+    <description><![CDATA[]]></description>
+</item><item>
     <title>bloom-filters</title>
     <link>https://coding2fun.github.io/tags/bloom-filters/</link>
     <pubDate>Wed, 05 Jun 2019 00:00:00 &#43;0000</pubDate>
@@ -66,13 +73,6 @@
     <pubDate>Wed, 05 Jun 2019 00:00:00 &#43;0000</pubDate>
     <author>Author</author>
     <guid>https://coding2fun.github.io/tags/go/</guid>
-    <description><![CDATA[]]></description>
-</item><item>
-    <title>golang</title>
-    <link>https://coding2fun.github.io/tags/golang/</link>
-    <pubDate>Wed, 05 Jun 2019 00:00:00 &#43;0000</pubDate>
-    <author>Author</author>
-    <guid>https://coding2fun.github.io/tags/golang/</guid>
     <description><![CDATA[]]></description>
 </item></channel>
 </rss>

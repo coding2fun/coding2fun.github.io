@@ -27,7 +27,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/coding2fun.github.io\/kotlin_coroutines-1\/"
-        },"genre": "posts","keywords": "kotlin, kotlin-coroutines, non-blocking, async","wordcount":  810 ,
+        },"genre": "posts","keywords": "kotlin, kotlin-coroutines, non-blocking, async","wordcount":  863 ,
         "url": "https:\/\/coding2fun.github.io\/kotlin_coroutines-1\/","datePublished": "2021-08-31T20:33:53+05:30","dateModified": "2021-08-31T20:33:53+05:30","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
@@ -77,8 +77,8 @@
             <div class="toc-content always-active" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">Writing non blocking async processing using Kotlin Coroutines in JVM</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://coding2fun.github.io" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Kishore Karunakaran</a></span>&nbsp;<span class="post-category">included in <a href="/categories/kotlin/"><i class="far fa-folder fa-fw"></i>kotlin</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-08-31">2021-08-31</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;810 words&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;4 minutes&nbsp;</div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-08-31">2021-08-31</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;863 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;5 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="true">
                 <div class="details-summary toc-title">
                     <span>Contents</span>
@@ -231,7 +231,23 @@
         data-sizes="auto"
         alt="/images/coroutine.png"
         title="image alt text" /></p>
-<p>The Kotlin compiler converts the suspension points into states. Suspend gives you a clue that when you make a call to this function you&rsquo;re going to roll the rest of code into a continuation and say you go off and execute this code when the result comes back and execute the rest of the code that&rsquo;s below this.</p>
+<p><br />
+The compiler transforms the suspending function with <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.coroutines/-continuation/" target="_blank" rel="noopener noreffer"><strong>Continuation</strong></a> parameter which is a generic callback interface.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">Object</span> <span class="nf">taskSquare</span><span class="o">(</span><span class="kt">int</span> <span class="n">x</span><span class="o">,</span> <span class="n">Continuation</span> <span class="n">var1</span><span class="o">)</span>
+
+<span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">Object</span> <span class="nf">taskDivide</span><span class="o">(</span><span class="kt">int</span> <span class="n">x</span><span class="o">,</span> <span class="n">Continuation</span> <span class="n">var1</span><span class="o">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><center>Decompiled code</center>
+<p><br />
+Suspend gives you a clue that when you make a call to this function you&rsquo;re going to roll the rest of code into a continuation and say you go off and execute this code when the result comes back and execute the rest of the code that&rsquo;s below this. It&rsquo;s just the callback is implicit and you don&rsquo;t see it in code. You just code it in nice direct style with callback behind the scenes.</p>
 </div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
