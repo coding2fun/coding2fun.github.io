@@ -27,7 +27,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/coding2fun.github.io\/kotlin_coroutines-1\/"
-        },"genre": "posts","keywords": "kotlin, kotlin-coroutines, non-blocking, async","wordcount":  863 ,
+        },"genre": "posts","keywords": "kotlin, kotlin-coroutines, non-blocking, async","wordcount":  957 ,
         "url": "https:\/\/coding2fun.github.io\/kotlin_coroutines-1\/","datePublished": "2021-08-31T20:33:53+05:30","dateModified": "2021-08-31T20:33:53+05:30","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
@@ -77,7 +77,7 @@
             <div class="toc-content always-active" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">Writing non blocking async processing using Kotlin Coroutines in JVM</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://coding2fun.github.io" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Kishore Karunakaran</a></span>&nbsp;<span class="post-category">included in <a href="/categories/kotlin/"><i class="far fa-folder fa-fw"></i>kotlin</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-08-31">2021-08-31</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;863 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-08-31">2021-08-31</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;957 words&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;5 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="true">
                 <div class="details-summary toc-title">
@@ -94,11 +94,12 @@
     </li>
   </ul>
 </nav></div>
-            </div><div class="content" id="content"><p>The systems we build nowadays don&rsquo;t really do a lot of computation, instead they communicate between services such as Database, REST API&rsquo;s, etc. If you look deeper we are building a system that wait&rsquo;s most of the time. We send a request to the server and we wait for the response. Microservices, Rest API that&rsquo;s part of our daily life. So, What&rsquo;s the problem with waiting ?</p>
-<p><br /></p>
-<p>Whenever you perform an IO bounded operation in your service whether it&rsquo;s an database or API call to other services the thread which is assigned to perform this operation will also get blocked. Also what if the service which we are calling is slow service and we don&rsquo;t have any control over it. Over time you can quickly endup with only executors threads being blocked because just one of your services is slow. What we have now is that most of our code does not spend it&rsquo;s time consuming CPU to do some work.</p>
-<p><br /></p>
-<p><img
+            </div><div class="content" id="content"><p><strong><em>Coroutines make our asynchronous code look sequential</em></strong></p>
+<p>The systems we build nowadays don&rsquo;t really do a lot of computation, instead they communicate between services such as Database, REST API&rsquo;s, etc. If you look deeper we are building a system that wait&rsquo;s most of the time. We send a request to the server and we wait for the response. Microservices, Rest API that&rsquo;s part of our daily life. So, What&rsquo;s the problem with waiting ?</p>
+<p><br />
+Whenever you perform an IO bounded operation in your service whether it&rsquo;s an database or API call to other services the thread which is assigned to perform this operation will also get blocked. Also what if the service which we are calling is slow service and we don&rsquo;t have any control over it. Over time you can quickly endup with only executors threads being blocked because just one of your services is slow. What we have now is that most of our code does not spend it&rsquo;s time consuming CPU to do some work.</p>
+<p><br />
+<img
         class="lazyload"
         src="/svg/loading.min.svg"
         data-src="/images/slow_service.png"
@@ -106,7 +107,7 @@
         data-sizes="auto"
         alt="/images/slow_service.png"
         title="image alt text" /></p>
-<center>cascading failure because of slow service</center>
+<p align='center' style='color:gray'>cascading failure because of slow service</p>
 <p><br /></p>
 <p>One can overcome this using asynchronous processing. The solution to the problem is instead of blocking a thread while you wait we release the thread in wait without blocking and whenever we get the response back then we find a thread to process the result. This asynchronous processing can be written in one of the following ways</p>
 <ul>
@@ -122,7 +123,7 @@
 <p><strong>Lightweight:</strong> Coroutines are not threads, We could easily create hundreds of thousands of them without running out of memory</p>
 <!-- /wp:paragraph -->
 <!-- wp:paragraph -->
-<p><strong>Cooperative:</strong> The OS doesn't have to context switch as it does for threads. The coroutines can suspend and resume at any point of time, so they cooperatively progress. Also, they can be supervised and utilise channel to communicate.</p>
+<p><strong>Cooperative:</strong> The OS doesn't have to context switch as it does for threads. The coroutines can suspend and resume at any point of time so they cooperatively progress. Also, they can be supervised and utilise concurrency primitive channel to communicate.</p>
 <!-- /wp:paragraph -->
 <!-- wp:paragraph -->
 <p><strong>Sequential Code:</strong> You can write concurrent code as non concurrent/sequential code. So code is more developer friendly and readable  not like threads, async callbacks, futures, etc.</p>
@@ -149,9 +150,9 @@
 
 <span class="c1">//Start
 </span><span class="c1"></span><span class="k">fun</span> <span class="nf">main</span><span class="p">()</span> <span class="p">=</span> <span class="n">runBlocking</span> <span class="p">{</span>
-    <span class="n">repeat</span><span class="p">(</span><span class="m">1000</span><span class="n">_000</span><span class="p">){</span> <span class="c1">// launches one million coroutines
+    <span class="n">repeat</span><span class="p">(</span><span class="m">100</span><span class="n">_000</span><span class="p">){</span> <span class="c1">// launches 100K coroutines
 </span><span class="c1"></span>        <span class="n">launch</span><span class="p">{</span>
-            <span class="n">delay</span><span class="p">(</span><span class="m">10000</span><span class="p">)</span> <span class="c1">// Wait for 10 Seconds
+            <span class="n">delay</span><span class="p">(</span><span class="m">10000L</span><span class="p">)</span> <span class="c1">// Wait for 10 Seconds
 </span><span class="c1"></span>            <span class="n">print</span><span class="p">(</span><span class="s2">&#34;.&#34;</span><span class="p">)</span>
         <span class="p">}</span>
     <span class="p">}</span>
@@ -159,7 +160,13 @@
 <span class="c1">//End
 </span></code></pre></td></tr></table>
 </div>
-</div><p>The above code create&rsquo;s a one million coroutines, If we try to perform the same operation using java threads we will be getting <a href="https://docs.oracle.com/javase/7/docs/api/java/lang/OutOfMemoryError.html" target="_blank" rel="noopener noreffer">OutOfMemoryError</a></p>
+</div><p><br /></p>
+<p align="center">
+  <img src="/images/coroutine_2.png" />
+</p>
+<p align='center' style='color:gray'>When coroutines are waiting for an external response, the Kotlin scheduler puts them in a suspended state and continues to process other coroutines.</p>
+<br />
+<p>The above code create&rsquo;s a 100K coroutines, If we try to perform the same operation using java threads we will be getting <a href="https://docs.oracle.com/javase/7/docs/api/java/lang/OutOfMemoryError.html" target="_blank" rel="noopener noreffer">OutOfMemoryError</a>. Coroutines are also suspendable, meaning that when a coroutine is waiting for an external response (such as a network response or a device I/O) it becomes suspended and the Kotlin scheduler moves this coroutine off the thread. The same thread can then pick up other coroutines waiting to be executed. This way coroutines appear to always be executing concurrently (but may not be simultaneously).</p>
 <p><br /></p>
 <h3 id="coroutines-under-the-hood">Coroutines under the hood</h3>
 <p>Kotlin Coroutine mainly works with the following three concepts</p>
