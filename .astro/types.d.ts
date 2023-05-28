@@ -109,6 +109,13 @@ declare module 'astro:content' {
   collection: "blog",
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] },
+"2-micronaut-aws.md": {
+  id: "2-micronaut-aws.md",
+  slug: "2-micronaut-aws",
+  body: string,
+  collection: "blog",
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] },
 },
 
 	};

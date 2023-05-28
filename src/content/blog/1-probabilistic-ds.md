@@ -1,8 +1,8 @@
 ---
 author: Kishore Karunakaran
-pubDatetime: 2019-06-05T15:22:00Z
+pubDatetime: 2019-06-05T11:22:00Z
 title: Probabilistic Data Structures
-postSlug: 1-probabilistic-ds-theme
+postSlug: probabilistic-ds
 featured: true
 draft: false
 tags:
