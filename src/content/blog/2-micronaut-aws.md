@@ -7,9 +7,10 @@ featured: true
 draft: false
 tags:
   - java
+  - jvm
   - micronaut
   - aws
-  - awslambda
+  - aws-lambda
 ogImage: "/assets/micronaut/m1.png"
 description:
   A year ago, I was developing an enterprise solution using aws lambda with Java and at that time there was no support for high level tools and frameworks in the ecosystem with respect to serverless space something like Spring Boot. I’ve used spring cloud in aws lambda but it didn’t work for the solution we are building. So I’ve started developing with the plain AWS SDK library and Speedment ORM but after building the few services I’ve felt a couple of bottlenecks.

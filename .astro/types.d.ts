@@ -116,6 +116,13 @@ declare module 'astro:content' {
   collection: "blog",
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] },
+"3-kotlin-coroutines.md": {
+  id: "3-kotlin-coroutines.md",
+  slug: "3-kotlin-coroutines",
+  body: string,
+  collection: "blog",
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] },
 },
 
 	};
