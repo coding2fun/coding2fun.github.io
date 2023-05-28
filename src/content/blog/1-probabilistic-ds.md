@@ -16,6 +16,8 @@ description:
 
 Suppose let’s say you are signing up for the new Email id. When you enter a new mail id, respective mail service will check whether the given mail id already exists.
 
+<img src="/assets/pds/email.png"></img>
+
 ## Table of contents
 
 ## Introduction
