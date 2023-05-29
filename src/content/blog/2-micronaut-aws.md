@@ -12,10 +12,11 @@ tags:
   - aws
   - aws-lambda
 ogImage: "/assets/micronaut/m1.png"
-description:
-  A year ago, I was developing an enterprise solution using aws lambda with Java and at that time there was no support for high level tools and frameworks in the ecosystem with respect to serverless space something like Spring Boot. I’ve used spring cloud in aws lambda but it didn’t work for the solution we are building. So I’ve started developing with the plain AWS SDK library and Speedment ORM but after building the few services I’ve felt a couple of bottlenecks.
+description: A year ago, I was developing an enterprise solution using aws lambda with Java and at that time there was no support for high level tools and frameworks in the ecosystem with respect to serverless space something like Spring Boot. I’ve used spring cloud in aws lambda but it didn’t work for the solution we are building. So I’ve started developing with the plain AWS SDK library and Speedment ORM but after building the few services I’ve felt a couple of bottlenecks.
 ---
+
 <img src="/assets/micronaut/m1.jpeg"></img>
+
 <!-- wp:paragraph -->
 <p>A year ago, I was developing an enterprise solution using aws lambda with Java and at that time there was no support for high level tools and frameworks in the ecosystem with respect to Serverless space something like Spring Boot. I’ve used spring cloud in aws lambda but it didn’t work for the solution we are building. So I’ve started developing with the plain <a href="https://aws.amazon.com/sdk-for-java/">AWS SDK</a> library and<a href="https://speedment.com/open-source/"> Speedment ORM</a> but after building the few services I've felt a couple of bottlenecks.</p>
 <!-- /wp:paragraph -->
@@ -57,6 +58,7 @@ description:
 ## Table of contents
 
 ## Code Examples and Numbers
+
 <!-- wp:paragraph -->
 <p>This article is accompanied by a working code example&nbsp;<a rel="noreferrer noopener" href="https://github.com/thombergs/code-examples/tree/master/spring-boot/specification" target="_blank"><strong>on </strong></a><a rel="noreferrer noopener" href="https://github.com/khekrn/coding2fun/tree/master/Micronaut-AWS-Lambda" target="_blank"><strong>GitHub</strong></a>.</p>
 <!-- /wp:paragraph -->
@@ -66,9 +68,10 @@ description:
 <figure class="wp-block-table aligncenter is-style-stripes"><table><tbody><tr><td class="has-text-align-center" data-align="center"><strong>Type</strong></td><td class="has-text-align-center" data-align="center"><strong>Memory(In MB)</strong></td><td class="has-text-align-center" data-align="center"><strong>Startup Time</strong></td><td class="has-text-align-center" data-align="center"><strong>Package Size(In MB)</strong></td></tr><tr><td class="has-text-align-center" data-align="center">Micronaut Lambda</td><td class="has-text-align-center" data-align="center">2304</td><td class="has-text-align-center" data-align="center">7 s</td><td class="has-text-align-center" data-align="center">31</td></tr><tr><td class="has-text-align-center" data-align="center">Micronaut Lambda Native Image</td><td class="has-text-align-center" data-align="center">2304</td><td class="has-text-align-center" data-align="center">907 ms</td><td class="has-text-align-center" data-align="center">26</td></tr></tbody></table></figure>
 <!-- /wp:table --></div>
 <!-- /wp:group -->
-To show case the productivity of the micronaut we are going to build a minimal blog post api using Micronaut, AWS Lambda and Postgres RDS.
+<p>To show case the productivity of the micronaut we are going to build a minimal blog post api using Micronaut, AWS Lambda and Postgres RDS.</p>
 
 ## Choose How Lambda is Triggered
+
 <!-- wp:paragraph -->
 <p>To generate the micronaut module naviage to <a rel="noreferrer noopener" href="https://micronaut.io/launch/" target="_blank">https://micronaut.io/launch/</a> and select application type as <strong>Application</strong> with the following features</p>
 <!-- /wp:paragraph -->
@@ -100,6 +103,7 @@ To show case the productivity of the micronaut we are going to build a minimal b
 <!-- /wp:table -->
 
 ## Lambda Handlers
+
 <!-- wp:paragraph -->
 <p>Lambda function's handler is the method in your function code that processes events. When your function is invoked, Lambda runs the handler method. When the handler exits or returns a response, it becomes available to handle another event. The aws-lambda-java-core library defines two interfaces for handler methods. When coding your functions with Micronaut, you don't implement those interfaces directly. Instead, you extend or use its Micronaut equivalents.</p>
 <!-- /wp:paragraph -->
@@ -113,11 +117,13 @@ To show case the productivity of the micronaut we are going to build a minimal b
 <!-- /wp:paragraph -->
 
 ## Database Tables and Entities
+
 <!-- wp:paragraph -->
 <p>Consider the following tables where <strong><em>posts</em></strong> and <strong><em>tags</em></strong> exhibit a many-to-many relationship between each other. The many-to-many relationship is implemented using a third table called <strong><em>post_tags</em></strong> which contains the details of posts and their associated tags.</p>
 <!-- /wp:paragraph -->
 
 ### Post Entity
+
 ```java
 @Entity
 @Table(name = "post")
@@ -156,6 +162,7 @@ public class Post implements Serializable {
 ```
 
 ### Tag Entity
+
 ```java
 @Entity
 @Table(name = "tags")
@@ -182,6 +189,7 @@ public class Tag implements Serializable {
 ### Defining the Repositories
 
 - Post Repository
+
 ```java
 @Repository
 public interface PostRepository extends JpaRepository<Post, Long> {
@@ -193,6 +201,7 @@ public interface PostRepository extends JpaRepository<Post, Long> {
 ```
 
 - Tag Repository
+
 ```java
 @Repository
 public interface TagRepository extends JpaRepository<Tag, Long> {
@@ -203,6 +212,7 @@ public interface TagRepository extends JpaRepository<Tag, Long> {
 ```
 
 ### Controller
+
 ```java
 @Controller("/v1")
 public class PostTagController {
@@ -250,6 +260,7 @@ public class PostTagController {
     }
 }
 ```
+
 <!-- wp:paragraph -->
 <p>This feels very similar to spring boot and it's more productive than before. Once you have the service ready you can deploy with few steps. </p>
 <!-- /wp:paragraph -->
@@ -259,6 +270,7 @@ public class PostTagController {
 <!-- /wp:paragraph -->
 
 <img src="/assets/micronaut/l1.png"></img>
+
 <!-- wp:paragraph -->
 <p>Define the handler with <strong>com.blog.handler.BlogHandler</strong> which is a custom class that extends <a rel="noreferrer noopener" href="https://micronaut-projects.github.io/micronaut-aws/2.0.x/api/io/micronaut/function/aws/proxy/MicronautLambdaHandler.html" target="_blank">MicronautLambdaHandler.</a> If you choose not to define a custom handler, then we can set default <a rel="noreferrer noopener" href="https://micronaut-projects.github.io/micronaut-aws/2.0.x/api/io/micronaut/function/aws/proxy/MicronautLambdaHandler.html" target="_blank">MicronautLambdaHandler</a> using  <strong>io.micronaut.function.aws.proxy.MicronautLambdaHandler</strong> in the aws lambda.</p>
 <!-- /wp:paragraph -->
@@ -268,11 +280,13 @@ public class PostTagController {
 <!-- /wp:paragraph -->
 
 ## Native Image
+
 <!-- wp:paragraph -->
 <p>It's an AOT compiler for Java code to a standalone executable, called a native image. This executable includes the application classes, classes from its dependencies, runtime library classes, and statically linked native code from JDK. It does not run on the Java VM, but includes necessary components like memory management, thread scheduling, and so on from a different runtime system, called “Substrate VM”. Substrate VM is the name for the runtime components (like the deoptimizer, garbage collector, thread scheduling etc.). The resulting program has faster startup time and lower runtime memory overhead compared to a JVM.</p>
 <!-- /wp:paragraph -->
 
 ### Installation
+
 <!-- wp:list -->
 <ul><!-- wp:list-item -->
 <li>Install graalvm(Latest Version 20.3) using<a href="https://sdkman.io/"> SDKMAN</a> using <code>sdk install java 20.3.0.r11-grl</code>.</li>
@@ -341,6 +355,7 @@ public class PostTagController {
 
 <img src="/assets/micronaut/l3.png"></img>
 <img src="/assets/micronaut/l4.png"></img>
+
 <!-- wp:paragraph -->
 <p>With native image we can see the initialization is less than one second(907ms).  We have reduced our cold start time from 7 seconds to nearly 1 second.</p>
 <!-- /wp:paragraph -->
@@ -364,10 +379,7 @@ public class PostTagController {
 <!-- /wp:list -->
 
 ## Conclusion
-<!-- wp:list-item -->
-<li>Micronaut and Graal VM are game changer for Java especially in the Serverless space.</li>
-<!-- /wp:list-item -->
 
-<!-- wp:list-item -->
-<li>Micronaut helps you to become more productive when building API’s using AWS Lambda or any other serverless technologies.</li>
+- Micronaut and Graal VM are game changer for Java especially in the Serverless space.
+- Micronaut helps you to become more productive when building API’s using AWS Lambda or any other serverless technologies.
 <!-- /wp:list-item -->

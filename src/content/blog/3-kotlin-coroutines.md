@@ -396,17 +396,9 @@ object CoroutineFun {
 <!-- /wp:paragraph -->
 
 ## Conclusion
-<!-- wp:list-item -->
-<li>With the help of coroutines we can write the non blocking code using imperative/sequential style.</li>
-<!-- /wp:list-item -->
-
-<!-- wp:list-item -->
-<li>Coroutines are resumable tasks that are lightweight to create and schedule.</li>
-<!-- /wp:list-item -->
-
-<!-- wp:list-item -->
-<li>We also know when and how a coroutine suspends during its execution.</li>
-<!-- /wp:list-item -->
+- With the help of coroutines we can write the non blocking code using imperative/sequential style.
+- Coroutines are resumable tasks that are lightweight to create and schedule.
+- We also know when and how a coroutine suspends during its execution.
 
 ## References
 <!-- wp:group {"layout":{"type":"flex","orientation":"vertical"}} -->
