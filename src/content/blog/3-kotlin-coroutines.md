@@ -11,9 +11,9 @@ tags:
   - coroutines
   - spring-boot
 ogImage: "/assets/coroutines/image.png"
-description:
-  The systems we build nowadays don’t really do a lot of computation, instead they communicate between services such as Database, REST API’s, etc. If you look deeper we are building a system that wait’s most of the time. We send a request to the server and we wait for the response. Microservices, Rest API that’s part of our daily life. So, What’s the problem with waiting ?
+description: The systems we build nowadays don’t really do a lot of computation, instead they communicate between services such as Database, REST API’s, etc. If you look deeper we are building a system that wait’s most of the time. We send a request to the server and we wait for the response. Microservices, Rest API that’s part of our daily life. So, What’s the problem with waiting ?
 ---
+
 <!-- wp:paragraph -->
 <p>The systems we build nowadays don’t really do a lot of computation, instead they communicate between services such as Database, REST API’s, etc. If you look deeper we are building a system that wait’s most of the time. We send a request to the server and we wait for the response. Microservices, Rest API that’s part of our daily life. So, What’s the problem with waiting ?</p>
 <!-- /wp:paragraph -->
@@ -48,6 +48,7 @@ description:
 ## Table of contents
 
 ## What are Coroutines ?
+
 <!-- wp:paragraph -->
 <p>Coroutines are lightweight and cooperative multitasking systems where tasks voluntarily yield in order to allow other tasks to run. The beauty of Kotlin coroutines is developers can write concurrent code as sequential code.</p>
 <!-- /wp:paragraph -->
@@ -85,6 +86,7 @@ fun main() = runBlocking {
     }
 }
 ```
+
 <!-- wp:paragraph -->
 <p>The above code create’s a 100K coroutines, If we try to perform the same operation using java threads we will be getting&nbsp;<a rel="noreferrer noopener" href="https://docs.oracle.com/javase/7/docs/api/java/lang/OutOfMemoryError.html" target="_blank">OutOfMemoryError</a>. Coroutines are also suspendable, meaning that when a coroutine is waiting for an external response (such as a network response or a device I/O) it becomes suspended and the Kotlin scheduler moves this coroutine off the thread. The same thread can then pick up other coroutines waiting to be executed. This way coroutines appear always to be executing concurrently (but may not be simultaneously). Also kotlin coroutines follows a structured concurrency which means new coroutines can only be launched in a specific coroutine scope hence there are clear entry and exit points.</p>
 <!-- /wp:paragraph -->
@@ -92,8 +94,9 @@ fun main() = runBlocking {
 <img src="/assets/coroutines/suspend.png"></img>
 
 ## Demo
+
 <!-- wp:paragraph -->
-<p>This article is accompanied by a working code example&nbsp;<a rel="noreferrer noopener" href="https://github.com/thombergs/code-examples/tree/master/spring-boot/specification" target="_blank"><strong>on&nbsp;</strong></a><a href="https://github.com/khekrn/coding2fun/tree/master/Kotlin-Coroutines" target="_blank" rel="noreferrer noopener"><strong>GitHub</strong></a>.</p>
+<p>This article is accompanied by a working code example&nbsp;on&nbsp;</strong></a><a href="https://github.com/khekrn/coding2fun/tree/master/Kotlin-Coroutines" target="_blank" rel="noreferrer noopener"><strong>GitHub</strong></a>.</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
@@ -129,65 +132,64 @@ fun main() = runBlocking {
 <!-- /wp:paragraph -->
 
 ### Validation and Avatar API
+
 ```js
 //Load express module with `require` directive
-var express = require('express')
-var app = express()
+var express = require("express");
+var app = express();
 
-var images = ['https://www.clipartmax.com/png/small/204-2045046_there-appears-to-be-a-whale-on-the-bottom-docker-image-icon.png',
-    'https://66.media.tumblr.com/6cf47a664464b02bff6c64ff959d4355/tumblr_pft74oWO4f1s3vdozo1_1280.jpg',
-    'http://3.bp.blogspot.com/-A-bbtwJwI8s/Uek2HQvuFhI/AAAAAAAABQM/F91QmX3SLz0/s1600/220px-Tux.png',
-    'https://www.add-for.com/wp-content/uploads/2017/01/octocat-wave-dribbble.gif',
-    'https://typelevel.org/cats-effect/img/cats-logo.png']
+var images = [
+  "https://www.clipartmax.com/png/small/204-2045046_there-appears-to-be-a-whale-on-the-bottom-docker-image-icon.png",
+  "https://66.media.tumblr.com/6cf47a664464b02bff6c64ff959d4355/tumblr_pft74oWO4f1s3vdozo1_1280.jpg",
+  "http://3.bp.blogspot.com/-A-bbtwJwI8s/Uek2HQvuFhI/AAAAAAAABQM/F91QmX3SLz0/s1600/220px-Tux.png",
+  "https://www.add-for.com/wp-content/uploads/2017/01/octocat-wave-dribbble.gif",
+  "https://typelevel.org/cats-effect/img/cats-logo.png",
+];
 
-function isNumeric (n) {
-    return !isNaN(parseFloat(n)) && isFinite(n)
+function isNumeric(n) {
+  return !isNaN(parseFloat(n)) && isFinite(n);
 }
 
 //Define request response in root URL (/)
-app.get('/avatar', function (req, res) {
-    var avatar = {}
-    var randomId = Math.floor(Math.random() * images.length)
-    avatar.url = images[randomId]
-    var delay = req.query.delay
-    if (delay && isNumeric(delay)) {
-        setTimeout(function () {
-            res.send(avatar)
-        }, delay)
-    } else res.send(avatar)
-})
+app.get("/avatar", function (req, res) {
+  var avatar = {};
+  var randomId = Math.floor(Math.random() * images.length);
+  avatar.url = images[randomId];
+  var delay = req.query.delay;
+  if (delay && isNumeric(delay)) {
+    setTimeout(function () {
+      res.send(avatar);
+    }, delay);
+  } else res.send(avatar);
+});
 
-app.get('/email', function (req, res) {
-    var echo = req.query.value
-    var delay = req.query.delay
-    if (delay && isNumeric(delay)) {
-        setTimeout(function () {
-            res.send(echo)
-        }, delay)
-    } else
-        res.send(echo)
-})
-
+app.get("/email", function (req, res) {
+  var echo = req.query.value;
+  var delay = req.query.delay;
+  if (delay && isNumeric(delay)) {
+    setTimeout(function () {
+      res.send(echo);
+    }, delay);
+  } else res.send(echo);
+});
 
 //Define request response in root URL (/)
-app.get('/*', function (req, res) {
-    console.log(req.originalUrl)
-    var delay = req.query.delay
-    if (delay && isNumeric(delay)) {
-        setTimeout(function () {
-            res.send('delayed  OK: ' + req.path)
-        }, delay)
-    } else
-        res.send('OK ' + req.path)
-})
-
-
+app.get("/*", function (req, res) {
+  console.log(req.originalUrl);
+  var delay = req.query.delay;
+  if (delay && isNumeric(delay)) {
+    setTimeout(function () {
+      res.send("delayed  OK: " + req.path);
+    }, delay);
+  } else res.send("OK " + req.path);
+});
 
 //Launch listening server on port 8081
 app.listen(8081, function () {
-    console.log('app listening on port 8081!')
-})
+  console.log("app listening on port 8081!");
+});
 ```
+
 <!-- wp:paragraph -->
 <p>Now let us define the entities and controllers. The complete code is available in the github link mentioned above.</p>
 <!-- /wp:paragraph -->
@@ -197,6 +199,7 @@ app.listen(8081, function () {
 <!-- /wp:paragraph -->
 
 ### Entity
+
 ```kotlin
 @Table(name = "user")
 data class User(
@@ -219,10 +222,13 @@ data class User(
 ```
 
 ### Thread Per Request
+
 <img src="/assets/coroutines/t.png"></img>
 
 ### Coroutines
+
 <img src="/assets/coroutines/c.png"></img>
+
 <!-- wp:paragraph -->
 <p>Here we are marking <code>storeUser</code> as a <strong>suspend</strong>(more on this below) function and the IDE is showing there are three suspension points(Non blocking IO calls) line no <strong>26(validate email API)</strong>, <strong>30(avatar api)</strong> and <strong>33(saving user details in db)</strong>.</p>
 <!-- /wp:paragraph -->
@@ -232,6 +238,7 @@ data class User(
 <!-- /wp:paragraph -->
 
 ## Benchmarks
+
 <!-- wp:paragraph -->
 <p>We are using <a href="https://github.com/tsenart/vegeta" target="_blank" rel="noreferrer noopener">Vegeta</a> as load testing tool and we will benchmark with following parameters</p>
 <!-- /wp:paragraph -->
@@ -255,15 +262,19 @@ data class User(
 <!-- /wp:list -->
 
 ### Thread Per Request
+
 <img src="/assets/coroutines/b1.png"></img>
 
 ### Coroutines
+
 <img src="/assets/coroutines/b2.png"></img>
+
 <!-- wp:paragraph -->
 <p>The numbers speak for itself as you can see coroutine implementation is better than traditional thread per requests and the beauty is we are still writing imperative/sequential code.</p>
 <!-- /wp:paragraph -->
 
 ## Coroutines under the hood
+
 <!-- wp:paragraph -->
 <p>Now let us try to understand the internals of coroutines. Kotlin Coroutine mainly works with the following three concepts </p>
 <!-- /wp:paragraph -->
@@ -326,6 +337,7 @@ object CoroutineFun {
 <!-- /wp:paragraph -->
 
 ### Continuations
+
 <!-- wp:paragraph -->
 <p>Every suspend function is transformed by the compiler to take a <a rel="noreferrer noopener" href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.coroutines/-continuation/" target="_blank">Continuation</a> object. In the above case, <strong>fetchPosts</strong> and <strong>fetchComments</strong> suspend functions will be transformed to take a <a rel="noreferrer noopener" href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.coroutines/-continuation/" target="_blank">Continuation</a> object when compiled, i.e <code>.<strong>fetchPosts</strong>(continuation)</code>. So we save all the state (like local variables, etc.) within this Continuation object and pass it to the suspend function. Similarly, all other suspend functions and blocks get transformed to take a Continuation object as well.</p>
 <!-- /wp:paragraph -->
@@ -339,6 +351,7 @@ object CoroutineFun {
 <!-- /wp:paragraph -->
 
 ### Suspension Points
+
 <!-- wp:paragraph -->
 <p>The Kotlin compiler converts the <strong>suspension points into states</strong>. In the above code block we have two suspension points(<strong>fetchPosts</strong> and <strong>fetchComments</strong>) and this is where the execution of the coroutine can be suspended and then resumed later. Now that we have identified, two suspension points in the above code, let us have a look at how these suspension points get transformed into different states using labels.</p>
 <!-- /wp:paragraph -->
@@ -396,11 +409,13 @@ object CoroutineFun {
 <!-- /wp:paragraph -->
 
 ## Conclusion
+
 - With the help of coroutines we can write the non blocking code using imperative/sequential style.
 - Coroutines are resumable tasks that are lightweight to create and schedule.
 - We also know when and how a coroutine suspends during its execution.
 
 ## References
+
 <!-- wp:group {"layout":{"type":"flex","orientation":"vertical"}} -->
 <div class="wp-block-group"><!-- wp:list -->
 <ul><!-- wp:list-item -->
